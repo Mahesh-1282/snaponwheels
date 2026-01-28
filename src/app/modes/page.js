@@ -21,7 +21,7 @@ export default function ModesPage() {
                 <ModeLink
                     title="Selfie Mode"
                     desc="The Classic. 4 Poses. 2 Strips."
-                    img="/images/music-lover.png"
+                    img="/images/selfie-mode.png"
                     link="/modes/selfie"
                     icon={<Camera />}
                 />
@@ -35,14 +35,14 @@ export default function ModesPage() {
                 <ModeLink
                     title="Vibe Mode"
                     desc="Your Templates. Your Style."
-                    img="/images/vibe-love.png"
+                    img="/images/music-lover.png"
                     link="/modes/vibe"
                     icon={<Zap />}
                 />
                 <ModeLink
                     title="Passport Mode"
                     desc="Professional & AI Powered."
-                    img="/images/friends-gold.png"
+                    img="/images/passport.png"
                     link="/modes/passport"
                     icon={<Users />}
                 />

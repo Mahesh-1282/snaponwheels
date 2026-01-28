@@ -86,7 +86,7 @@ export default function Home() {
             title="Selfie Mode"
             desc="Capture 4 stunning shots. Choose between classic Color or dramatic B&W strips."
             icon={<Camera size={40} color="var(--primary)" />}
-            image="/images/normal-mode.png"
+            image="/images/selfie-mode.png"
             link="/modes/selfie"
           />
           <ModeCard

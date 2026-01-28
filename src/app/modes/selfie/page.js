@@ -13,14 +13,14 @@ export default function SelfieMode() {
                     style={{ flex: 1, minWidth: '300px', display: 'flex', gap: '20px' }}
                 >
                     <Image
-                        src="/images/normal-mode.png"
+                        src="/images/selfie-mode.png"
                         alt="Selfie Strip 1"
                         width={300}
                         height={600}
                         style={{ width: '48%', height: 'auto', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }}
                     />
                     <Image
-                        src="/images/normal-mode-1.png"
+                        src="/images/selfie-mode-1.png"
                         alt="Selfie Strip 2"
                         width={300}
                         height={600}
