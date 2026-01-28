@@ -5,33 +5,33 @@ import Image from 'next/image';
 
 export default function PassportMode() {
     return (
-        <div className="container section">
+        <div className="container section" style={{ paddingTop: '50px' }}>
             <div style={{ display: 'flex', gap: '30px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
                 <motion.div
                     initial={{ x: 50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    style={{ flex: 1, minWidth: '300px', display: 'flex', gap: '20px' }}
+                    style={{ flex: 1, minWidth: '350px', display: 'flex', flexDirection: 'column', gap: '30px', alignItems: 'center' }}
                 >
                     <Image
                         src="/images/passport-1.png"
                         alt="Passport Strip 1"
-                        width={300}
-                        height={600}
-                        style={{ width: '48%', height: 'auto', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }}
+                        width={600}
+                        height={1200}
+                        style={{ width: '80%', height: 'auto', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }}
                     />
                     <Image
                         src="/images/passport-2.png"
                         alt="Passport Strip 2"
-                        width={300}
-                        height={600}
-                        style={{ width: '48%', height: 'auto', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }}
+                        width={600}
+                        height={1200}
+                        style={{ width: '80%', height: 'auto', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }}
                     />
                 </motion.div>
 
                 <motion.div
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    style={{ flex: 1.5, minWidth: '300px' }}
+                    style={{ flex: 1, minWidth: '300px' }}
                 >
                     <h1 style={{ fontSize: '3.5rem', marginBottom: '20px', color: '#000' }}><span className="text-gradient">Passport</span> Mode</h1>
                     <p style={{ fontSize: '1.2rem', color: '#555', marginBottom: '40px', lineHeight: '1.6' }}>

@@ -86,7 +86,7 @@ export default function Home() {
             title="Selfie Mode"
             desc="Capture 4 stunning shots. Choose between classic Color or dramatic B&W strips."
             icon={<Camera size={40} color="var(--primary)" />}
-            image="/images/normal-mode.png"
+            image="/images/selfie-mode.png"
             link="/modes/selfie"
           />
           <ModeCard
@@ -157,36 +157,30 @@ export default function Home() {
 
 function ModeCard({ title, desc, icon, image, link }) {
   return (
-    <motion.div
-      whileHover={{ y: -10 }}
-      className="glass-card"
-      style={{ overflow: 'hidden', padding: 0, display: 'flex', flexDirection: 'column' }}
-    >
-      <div style={{ height: '300px', position: 'relative', width: '100%' }}>
-        <Image
-          src={image}
-          alt={title}
-          fill
-          style={{ objectFit: 'contain', padding: '10px' }} // contain to show full strip
-        />
-        <div style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: '50%',
-          background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent)'
-        }} />
-      </div>
-      <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-        <div style={{ marginBottom: '15px' }}>{icon}</div>
-        <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>{title}</h3>
-        <p style={{ color: '#888', marginBottom: '20px', flex: 1 }}>{desc}</p>
-        <Link href={link} style={{ color: 'var(--primary)', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
-          Learn More <ArrowRight size={16} />
-        </Link>
-      </div>
-    </motion.div>
+    <Link href={link} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+      <motion.div
+        whileHover={{ y: -10 }}
+        className="glass-card"
+        style={{ overflow: 'hidden', padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}
+      >
+        <div style={{ height: '300px', position: 'relative', width: '100%' }}>
+          <Image
+            src={image}
+            alt={title}
+            fill
+            style={{ objectFit: 'contain', padding: '10px' }} // contain to show full strip
+          />
+        </div>
+        <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+          <div style={{ marginBottom: '15px' }}>{icon}</div>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>{title}</h3>
+          <p style={{ color: '#888', marginBottom: '20px', flex: 1 }}>{desc}</p>
+          <div style={{ color: 'var(--primary)', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
+            Learn More <ArrowRight size={16} />
+          </div>
+        </div>
+      </motion.div>
+    </Link>
   );
 }
 

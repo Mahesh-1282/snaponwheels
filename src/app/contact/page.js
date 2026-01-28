@@ -41,7 +41,7 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="container section">
+        <div className="container section" style={{ paddingTop: '50px' }}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h4 style={{ color: '#555', marginBottom: '5px' }}>Phone</h4>
-                                    <p style={{ fontSize: '1.1rem', color: '#000' }}>+91 98765 43210</p>
+                                    <p style={{ fontSize: '1.1rem', color: '#000' }}>+91 88856 66478</p>
                                 </div>
                             </div>
 
@@ -82,7 +82,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h4 style={{ color: '#555', marginBottom: '5px' }}>Email</h4>
-                                    <p style={{ fontSize: '1.1rem', color: '#000' }}>hello@snaponwheels.com</p>
+                                    <p style={{ fontSize: '1.1rem', color: '#000' }}>snaponwheel@gmail.com</p>
                                 </div>
                             </div>
 
