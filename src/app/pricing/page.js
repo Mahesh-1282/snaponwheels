@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function PricingPage() {
     return (
-        <div className="container section">
+        <div className="container section" style={{ paddingTop: '50px' }}>
             <div style={{ textAlign: 'center', marginBottom: '80px' }}>
                 <h1 style={{ fontSize: '3.5rem', marginBottom: '20px' }}>Our <span className="text-gradient">Packages</span></h1>
                 <p style={{ color: '#aaa', fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>

@@ -41,11 +41,11 @@ export default function Footer() {
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '15px' }}>
                             <li style={{ display: 'flex', gap: '10px', alignItems: 'center', color: '#888' }}>
                                 <Phone size={18} color="var(--primary)" />
-                                <span>+91 98765 43210</span>
+                                <span>+91 88856 66478</span>
                             </li>
                             <li style={{ display: 'flex', gap: '10px', alignItems: 'center', color: '#888' }}>
                                 <Mail size={18} color="var(--primary)" />
-                                <span>hello@snaponwheels.com</span>
+                                <span>snaponwheel@gmail.com</span>
                             </li>
                             <li style={{ display: 'flex', gap: '10px', alignItems: 'center', color: '#888' }}>
                                 <MapPin size={18} color="var(--primary)" />

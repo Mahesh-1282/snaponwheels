@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function FranchisePage() {
     return (
-        <div className="container section">
+        <div className="container section" style={{ paddingTop: '50px' }}>
             <div style={{ textAlign: 'center', marginBottom: '80px' }}>
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}

@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function ModesPage() {
     return (
-        <div className="container section">
+        <div className="container section" style={{ paddingTop: '50px' }}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

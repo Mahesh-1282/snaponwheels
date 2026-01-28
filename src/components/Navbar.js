@@ -28,7 +28,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img src="/images/SnaponWheelsLogo.png" alt="SnapOnWheels Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain' }} />
+            <img src="/images/SnaponWheelsLogo.png" alt="SnapOnWheels Logo" style={{ maxHeight: '50px', width: 'auto', objectFit: 'contain' }} />
           </div>
         </Link>
 

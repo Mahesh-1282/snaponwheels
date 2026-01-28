@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function SelfieMode() {
     return (
-        <div className="container section">
+        <div className="container section" style={{ paddingTop: '50px' }}>
             <div style={{ display: 'flex', gap: '30px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
                 <motion.div
                     initial={{ x: -50, opacity: 0 }}
