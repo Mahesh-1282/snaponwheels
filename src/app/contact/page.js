@@ -41,7 +41,7 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="container section" style={{ paddingTop: '50px' }}>
+        <div className="container section" style={{ paddingTop: '90px' }}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,8 @@ export default function ContactPage() {
             <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '60px'
+                gap: '60px',
+                padding: '0 20px'
             }}>
                 {/* Contact Info */}
                 <motion.div
@@ -62,37 +63,45 @@ export default function ContactPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
                 >
-                    <div className="glass-card" style={{ height: '100%' }}>
-                        <h3 style={{ fontSize: '1.8rem', marginBottom: '30px' }}>Our Details</h3>
+                    <div className="neon-card-burning" style={{
+                        height: '100%',
+                        padding: '40px',
+                        background: 'rgba(255, 255, 255, 0.8)',
+                        backdropFilter: 'blur(15px)',
+                        border: '2px solid rgba(0, 243, 255, 0.6)',
+                        borderRadius: '20px',
+                        boxShadow: '0 0 25px rgba(0, 243, 255, 0.2)',
+                    }}>
+                        <h3 style={{ fontSize: '1.8rem', marginBottom: '30px', color: '#1a1a1a', fontWeight: 'bold' }}>Our Details</h3>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
                             <div style={{ display: 'flex', gap: '20px' }}>
                                 <div style={{ background: 'rgba(0, 243, 255, 0.1)', padding: '15px', borderRadius: '12px' }}>
-                                    <Phone size={24} color="var(--primary)" />
+                                    <Phone size={24} color="#00f3ff" />
                                 </div>
                                 <div>
                                     <h4 style={{ color: '#555', marginBottom: '5px' }}>Phone</h4>
-                                    <p style={{ fontSize: '1.1rem', color: '#000' }}>+91 88856 66478</p>
+                                    <p style={{ fontSize: '1.1rem', color: '#000', fontWeight: '500' }}>+91 88856 66478</p>
                                 </div>
                             </div>
 
                             <div style={{ display: 'flex', gap: '20px' }}>
                                 <div style={{ background: 'rgba(188, 19, 254, 0.1)', padding: '15px', borderRadius: '12px' }}>
-                                    <Mail size={24} color="var(--secondary)" />
+                                    <Mail size={24} color="#bc13fe" />
                                 </div>
                                 <div>
                                     <h4 style={{ color: '#555', marginBottom: '5px' }}>Email</h4>
-                                    <p style={{ fontSize: '1.1rem', color: '#000' }}>snaponwheel@gmail.com</p>
+                                    <p style={{ fontSize: '1.1rem', color: '#000', fontWeight: '500' }}>snaponwheel@gmail.com</p>
                                 </div>
                             </div>
 
                             <div style={{ display: 'flex', gap: '20px' }}>
                                 <div style={{ background: 'rgba(255, 0, 85, 0.1)', padding: '15px', borderRadius: '12px' }}>
-                                    <MapPin size={24} color="var(--accent)" />
+                                    <MapPin size={24} color="#ff0055" />
                                 </div>
                                 <div>
                                     <h4 style={{ color: '#555', marginBottom: '5px' }}>Headquarters</h4>
-                                    <p style={{ fontSize: '1.1rem', color: '#000' }}>Hyderabad, India</p>
+                                    <p style={{ fontSize: '1.1rem', color: '#000', fontWeight: '500' }}>Hyderabad, India</p>
                                 </div>
                             </div>
                         </div>
@@ -105,12 +114,19 @@ export default function ContactPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4 }}
                 >
-                    <form onSubmit={handleSubmit} className="glass-card">
-                        <h3 style={{ fontSize: '1.8rem', marginBottom: '30px' }}>Send a Message</h3>
+                    <form onSubmit={handleSubmit} className="neon-card-burning" style={{
+                        padding: '40px',
+                        background: 'rgba(255, 255, 255, 0.8)',
+                        backdropFilter: 'blur(15px)',
+                        border: '2px solid rgba(0, 243, 255, 0.6)',
+                        borderRadius: '20px',
+                        boxShadow: '0 0 25px rgba(0, 243, 255, 0.2)',
+                    }}>
+                        <h3 style={{ fontSize: '1.8rem', marginBottom: '30px', color: '#1a1a1a', fontWeight: 'bold' }}>Send a Message</h3>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                             <div>
-                                <label style={{ display: 'block', marginBottom: '10px', color: '#aaa' }}>Name</label>
+                                <label style={{ display: 'block', marginBottom: '10px', color: '#555', fontWeight: '500' }}>Name</label>
                                 <input
                                     type="text"
                                     name="name"
@@ -124,7 +140,7 @@ export default function ContactPage() {
 
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                                 <div>
-                                    <label style={{ display: 'block', marginBottom: '10px', color: '#aaa' }}>Email</label>
+                                    <label style={{ display: 'block', marginBottom: '10px', color: '#555', fontWeight: '500' }}>Email</label>
                                     <input
                                         type="email"
                                         name="email"
@@ -136,7 +152,7 @@ export default function ContactPage() {
                                     />
                                 </div>
                                 <div>
-                                    <label style={{ display: 'block', marginBottom: '10px', color: '#aaa' }}>Phone</label>
+                                    <label style={{ display: 'block', marginBottom: '10px', color: '#555', fontWeight: '500' }}>Phone</label>
                                     <input
                                         type="tel"
                                         name="phone"
@@ -150,7 +166,7 @@ export default function ContactPage() {
                             </div>
 
                             <div>
-                                <label style={{ display: 'block', marginBottom: '10px', color: '#aaa' }}>Message</label>
+                                <label style={{ display: 'block', marginBottom: '10px', color: '#555', fontWeight: '500' }}>Message</label>
                                 <textarea
                                     name="message"
                                     value={formData.message}
@@ -165,7 +181,7 @@ export default function ContactPage() {
                                 type="submit"
                                 className="btn btn-primary"
                                 disabled={status === 'loading'}
-                                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', marginTop: '10px' }}
+                                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', marginTop: '10px', borderRadius: '50px' }}
                             >
                                 {status === 'loading' ? 'Sending...' : 'Send Message'}
                                 <Send size={18} />

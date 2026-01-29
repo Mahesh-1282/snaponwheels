@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function ServicesPage() {
     return (
-        <div className="container section" style={{ paddingTop: '50px' }}>
+        <div className="container section" style={{ paddingTop: '90px' }}>
             <div style={{ textAlign: 'center', marginBottom: '80px' }}>
                 <h1 style={{ fontSize: '3.5rem', marginBottom: '20px', color: '#000' }}>We <span className="text-gradient">Take Over</span></h1>
                 <p style={{ color: '#555', fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>
@@ -14,11 +14,16 @@ export default function ServicesPage() {
                 </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
+            <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                gap: '40px',
+                padding: '0 20px'
+            }}>
                 <ServiceCard
                     title="College Fests"
                     desc="The ultimate crowd puller. Magic Snap and Vibe Mode are hits with the Gen-Z crowd."
-                    icon={<Music size={40} color="#00f3ff" />}
+                    icon={<Music size={40} color="var(--primary)" />}
                 />
                 <ServiceCard
                     title="Weddings"
@@ -49,13 +54,31 @@ export default function ServicesPage() {
 function ServiceCard({ title, desc, icon }) {
     return (
         <motion.div
-            whileHover={{ y: -10 }}
-            className="glass-card"
-            style={{ textAlign: 'center', padding: '40px' }}
+            whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)' }}
+            className="service-card"
+            style={{
+                textAlign: 'center',
+                padding: '40px',
+                background: '#ffffff',
+                border: '1px solid rgba(0,0,0,0.05)',
+                borderRadius: '24px',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s ease'
+            }}
         >
-            <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>{icon}</div>
-            <h3 style={{ fontSize: '1.8rem', marginBottom: '15px', color: '#000' }}>{title}</h3>
-            <p style={{ color: '#666' }}>{desc}</p>
+            <div style={{
+                marginBottom: '20px',
+                display: 'flex',
+                justifyContent: 'center',
+                background: 'rgba(0,0,0,0.02)',
+                width: '80px',
+                height: '80px',
+                borderRadius: '50%',
+                alignItems: 'center',
+                margin: '0 auto 20px auto'
+            }}>{icon}</div>
+            <h3 style={{ fontSize: '1.8rem', marginBottom: '15px', color: '#1a1a1a', fontWeight: 'bold' }}>{title}</h3>
+            <p style={{ color: '#555', lineHeight: '1.6' }}>{desc}</p>
         </motion.div>
     );
 }

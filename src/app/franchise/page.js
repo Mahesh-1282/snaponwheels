@@ -15,7 +15,7 @@ export default function FranchisePage() {
                 >
                     Start Your <span className="text-gradient">Business</span>
                 </motion.h1>
-                <p style={{ color: '#aaa', fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>
+                <p style={{ color: '#555', fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>
                     Join the SnapOnWheels revolution. We provide end-to-end setup, software solutions, and 24/7 engineering support.
                 </p>
             </div>
@@ -81,7 +81,7 @@ export default function FranchisePage() {
                 <div style={{ fontSize: '3rem', fontWeight: 'bold', color: 'var(--primary)', marginBottom: '10px' }}>
                     ₹10,000 <span style={{ fontSize: '1.2rem', color: '#aaa' }}>/ 6 months</span>
                 </div>
-                <p style={{ color: '#aaa', marginBottom: '30px' }}>
+                <p style={{ color: '#555', marginBottom: '30px' }}>
                     Includes regular software updates, new filters, and priority issue resolution without engineer visits.
                 </p>
                 <Link href="/contact">
