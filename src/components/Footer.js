@@ -19,7 +19,7 @@ export default function Footer() {
                     {/* Brand */}
                     <div>
                         <h3 className="text-gradient" style={{ fontSize: '24px', marginBottom: '20px' }}>SnapOnWheels</h3>
-                        <p style={{ color: '#888', lineHeight: '1.6' }}>
+                        <p style={{ color: '#555', lineHeight: '1.6' }}>
                             Capture memories in style. From Selfie Modes to AI-powered Passport printing, we bring the vibe to your events.
                         </p>
                     </div>
@@ -39,15 +39,15 @@ export default function Footer() {
                     <div>
                         <h4 style={{ marginBottom: '20px' }}>Contact Us</h4>
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                            <li style={{ display: 'flex', gap: '10px', alignItems: 'center', color: '#888' }}>
+                            <li style={{ display: 'flex', gap: '10px', alignItems: 'center', color: '#555' }}>
                                 <Phone size={18} color="var(--primary)" />
                                 <span>+91 88856 66478</span>
                             </li>
-                            <li style={{ display: 'flex', gap: '10px', alignItems: 'center', color: '#888' }}>
+                            <li style={{ display: 'flex', gap: '10px', alignItems: 'center', color: '#555' }}>
                                 <Mail size={18} color="var(--primary)" />
                                 <span>snaponwheel@gmail.com</span>
                             </li>
-                            <li style={{ display: 'flex', gap: '10px', alignItems: 'center', color: '#888' }}>
+                            <li style={{ display: 'flex', gap: '10px', alignItems: 'center', color: '#555' }}>
                                 <MapPin size={18} color="var(--primary)" />
                                 <span>Hyderabad, India</span>
                             </li>
