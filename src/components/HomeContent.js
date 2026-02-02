@@ -1,8 +1,9 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Camera, Sparkles, Zap, Users, Globe, ArrowRight } from "lucide-react";
 
 export default function HomeContent() {
@@ -25,43 +26,111 @@ export default function HomeContent() {
 
             {/* Hero Section */}
             <section style={{
-                minHeight: '90vh',
+                minHeight: '100vh',
                 display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
                 alignItems: 'center',
-                textAlign: 'center',
-                padding: '120px 20px 0 20px', // Added top padding for fixed navbar
-                background: 'radial-gradient(circle at center, rgba(0, 243, 255, 0.05) 0%, rgba(255,255,255,1) 70%)'
+                justifyContent: 'center', // Center content horizontally
+                padding: '100px 20px 60px 20px', // Adjusted for 90px navbar
+                background: 'radial-gradient(circle at center, rgba(0, 243, 255, 0.05) 0%, rgba(255,255,255,1) 70%)',
+                overflow: 'hidden', // Prevent scrollbars from floating elements
+                position: 'relative'
             }}>
-                <motion.div initial="initial" animate="animate" variants={stagger}>
-                    <motion.h1 variants={fadeInUp} style={{
-                        fontSize: 'clamp(3rem, 8vw, 6rem)',
-                        marginBottom: '20px',
-                        lineHeight: '1.1',
-                        color: '#000'
-                    }}>
-                        Memory that <span className="text-gradient">never expires</span>
-                    </motion.h1>
-                    <motion.p variants={fadeInUp} style={{
-                        fontSize: 'clamp(1.2rem, 2vw, 1.5rem)',
-                        color: '#555',
-                        maxWidth: '800px',
-                        margin: '0 auto 40px auto'
-                    }}>
-                        The ultimate photo booth experience. From AI-driven Passport photos to Magic AR filters.
-                        We take over your events, college fests, and parties with style.
-                    </motion.p>
-                    <motion.div variants={fadeInUp} style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <Link href="/modes">
-                            <button className="btn btn-primary" style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                Explore Modes <ArrowRight size={20} />
-                            </button>
-                        </Link>
-                        <Link href="/contact">
-                            <button className="btn btn-outline">Book for Event</button>
-                        </Link>
+                <div className="container" style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'wrap', // Allow wrapping on smaller screens
+                    alignItems: 'center',
+                    justifyContent: 'center', // Center when wrapped
+                    gap: '40px',
+                    width: '100%',
+                    position: 'relative',
+                    zIndex: 1,
+                    marginTop: '-40px' // Visually pull content up further to reduce perceived gap
+                }}>
+                    {/* Left Column: Text Content */}
+                    <motion.div
+                        initial="initial"
+                        animate="animate"
+                        variants={stagger}
+                        style={{
+                            flex: '1 1 500px', // Grow, Shrink, Basis (min-width before wrapping)
+                            maxWidth: '100%',
+                            textAlign: 'left', // Default left alignment
+                            paddingTop: '20px'
+                        }}
+                    >
+                        <motion.h1 variants={fadeInUp} style={{
+                            fontSize: 'clamp(3.5rem, 6vw, 5.5rem)', // Slightly larger
+                            marginBottom: '25px',
+                            lineHeight: '1.1',
+                            color: '#000',
+                            fontWeight: '800'
+                        }}>
+                            Memory that <br /><span className="text-gradient">never expires</span>
+                        </motion.h1>
+
+                        <motion.p variants={fadeInUp} style={{
+                            fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
+                            color: '#555',
+                            marginBottom: '40px',
+                            lineHeight: '1.6'
+                        }}>
+                            Capture the moment with the ultimate photo booth experience.
+                            From <span style={{ color: 'var(--primary)', fontWeight: 'bold' }}>AI Magic</span> to
+                            <span style={{ color: 'var(--accent)', fontWeight: 'bold' }}> Vibe Checks</span>,
+                            we turn your events into timeless memories.
+                        </motion.p>
+
+                        <motion.div variants={fadeInUp} style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+                            <Link href="/modes">
+                                <button className="btn btn-primary" style={{
+                                    display: 'flex',
+                                    gap: '10px',
+                                    alignItems: 'center',
+                                    padding: '15px 35px',
+                                    fontSize: '1.1rem'
+                                }}>
+                                    Start Snapping <Camera size={20} />
+                                </button>
+                            </Link>
+                            <Link href="/contact">
+                                <button className="btn btn-outline" style={{ padding: '15px 35px', fontSize: '1.1rem' }}>
+                                    Book Now
+                                </button>
+                            </Link>
+                        </motion.div>
                     </motion.div>
+
+                    {/* Right Column: Dynamic Visuals (Animated Stack) */}
+                    <div
+                        style={{
+                            flex: 1,
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            position: 'relative',
+                            height: '500px',
+                            minWidth: '300px'
+                        }}
+                    >
+                        <CyclingStack />
+                    </div>
+                </div>
+
+                {/* Scroll Indicator */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, y: [0, 10, 0] }}
+                    transition={{ delay: 2, duration: 2, repeat: Infinity }}
+                    style={{
+                        position: 'absolute',
+                        bottom: '30px',
+                        left: '50%',
+                        translateX: '-50%',
+                        color: 'var(--primary)'
+                    }}
+                >
+                    <ArrowRight transform="rotate(90)" size={30} />
                 </motion.div>
             </section>
 
@@ -154,6 +223,94 @@ export default function HomeContent() {
                 </div>
             </section>
 
+        </div>
+    );
+}
+
+const images = [
+    "/images/selfie-mode.png",
+    "/images/magic-mode.png",
+    "/images/love-vibe.png",
+    "/images/friends-gold.png"
+];
+
+function CyclingStack() {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prev) => (prev + 1) % images.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const rotation = [-5, 10, -10, 5]; // Predefined rotations for randomness feel due to cycling
+
+    return (
+        <div style={{ position: 'relative', width: '100%', maxWidth: '360px', height: '540px', margin: '0 auto' }}>
+            {/* Background Blob/Glow */}
+            <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '120%',
+                height: '80%',
+                background: 'radial-gradient(circle, rgba(0, 243, 255, 0.25) 0%, rgba(188, 19, 254, 0.15) 60%, transparent 100%)',
+                borderRadius: '50%',
+                filter: 'blur(40px)',
+                zIndex: -1
+            }} />
+
+            {images.map((img, i) => {
+                const offset = (i - index + images.length) % images.length;
+                if (offset > 2) return null; // Only show top 3
+
+                return (
+                    <motion.div
+                        key={img}
+                        initial={false}
+                        animate={{
+                            top: offset * 30 + 'px',
+                            scale: 1 - offset * 0.05,
+                            rotate: rotation[i],
+                            zIndex: 100 - offset,
+                            filter: `blur(${offset * 2}px) brightness(${1 - offset * 0.1})`,
+                        }}
+                        transition={{
+                            duration: 0.8,
+                            ease: "easeInOut"
+                        }}
+                        style={{
+                            position: 'absolute',
+                            width: '100%',
+                            height: '100%',
+                            transformOrigin: 'top center',
+                            left: 0,
+                            right: 0,
+                            margin: '0 auto',
+                        }}
+                    >
+                        <div style={{
+                            width: '100%',
+                            height: '100%',
+                            position: 'relative',
+                            // Removed border, radius, shadow from container
+                        }}>
+                            <Image
+                                src={img}
+                                alt="Snap Memory"
+                                fill
+                                style={{
+                                    objectFit: 'contain', // Prevent cropping
+                                    filter: 'drop-shadow(0 20px 30px rgba(0,0,0,0.3))' // Shadow for the image itself
+                                }}
+                                sizes="(max-width: 768px) 90vw, 360px"
+                            />
+                        </div>
+                    </motion.div>
+                );
+            })}
         </div>
     );
 }

@@ -50,7 +50,7 @@ export default function Navbar() {
       background: 'rgba(255, 255, 255, 0.8)',
       backdropFilter: 'blur(12px)',
       borderBottom: '1px solid rgba(0,0,0,0.05)',
-      height: '80px',
+      height: '90px',
       display: 'flex',
       alignItems: 'center'
     }}>
@@ -64,7 +64,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" onClick={() => setIsOpen(false)} style={{ zIndex: 1002 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img src="/images/SnaponWheelsLogo.png" alt="SnapOnWheels Logo" style={{ maxHeight: '50px', width: 'auto', objectFit: 'contain' }} />
+            <img src="/images/SnaponWheelsLogo.png" alt="SnapOnWheels Logo" className="logo-img" />
           </div>
         </Link>
 
@@ -111,6 +111,7 @@ export default function Navbar() {
           gap: '30px'
         }}
         className="mobile-menu-overlay"
+        onClick={() => setIsOpen(false)}
       >
         {['Home', 'Modes', 'Services', 'Pricing', 'Contact'].map((item) => (
           <motion.div variants={itemVariants} key={item}>
@@ -208,12 +209,21 @@ export default function Navbar() {
           transform: rotate(-135deg);
         }
 
+        .logo-img {
+          max-height: 70px;
+          width: auto;
+          object-fit: contain;
+        }
+
         @media (max-width: 768px) {
           .desktop-menu {
             display: none !important;
           }
           .mobile-toggle {
             display: block;
+          }
+          .logo-img {
+            max-height: 50px; /* Smaller size for mobile */
           }
         }
       `}</style>
