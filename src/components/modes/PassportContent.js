@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import VideoSection from '../VideoSection';
 
 export default function PassportContent() {
     return (
@@ -58,6 +59,7 @@ export default function PassportContent() {
                     </div>
                 </motion.div>
             </div>
+            <VideoSection videoId="dQw4w9WgXcQ" />
         </div>
     );
 }
