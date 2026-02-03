@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import VideoSection from '../VideoSection';
 
 export default function SelfieContent() {
     return (
@@ -58,6 +59,10 @@ export default function SelfieContent() {
                     </div>
                 </motion.div>
             </div>
+            <VideoSection
+                videoId="Xr99kMDlc40"
+                description="Watch how easy it is to capture your memories. Just touch, pose, and snap! Our intuitive interface guides you through every step, ensuring you get the perfect shot every time."
+            />
         </div>
     );
 }
