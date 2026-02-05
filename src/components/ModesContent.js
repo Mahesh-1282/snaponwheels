@@ -42,7 +42,7 @@ export default function ModesContent() {
                 <ModeLink
                     title="Vibe Mode"
                     desc="Your Templates. Your Style."
-                    img="/images/music-lover.png"
+                    img="/images/love-vibe.png"
                     link="/modes/vibe"
                     icon={<Zap />}
                     priority={true}

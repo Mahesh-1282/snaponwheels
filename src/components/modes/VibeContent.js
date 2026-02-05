@@ -12,7 +12,7 @@ export default function VibeContent() {
                     style={{ flex: 1, minWidth: '280px', display: 'flex', gap: '20px', justifyContent: 'center', padding: '0 20px' }}
                 >
                     <Image
-                        src="/images/music-lover.png"
+                        src="/images/love-vibe.png"
                         alt="Vibe Strip 1"
                         width={300}
                         height={600}
