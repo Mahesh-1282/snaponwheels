@@ -8,9 +8,7 @@ export default function SelfieContent() {
     return (
         <div className="container section" style={{ paddingTop: '120px' }}>
             <div style={{ display: 'flex', gap: '30px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
-                <motion.div
-                    initial={{ x: -50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                <div
                     style={{ flex: 1, minWidth: '280px', display: 'flex', gap: '20px', justifyContent: 'center', padding: '0 20px' }}
                 >
                     <Image
@@ -31,7 +29,7 @@ export default function SelfieContent() {
                         sizes="(max-width: 768px) 45vw, 300px"
                         style={{ width: '48%', height: 'auto', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }}
                     />
-                </motion.div>
+                </div>
 
                 <motion.div
                     initial={{ x: 50, opacity: 0 }}
