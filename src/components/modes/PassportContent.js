@@ -8,9 +8,7 @@ export default function PassportContent() {
     return (
         <div className="container section" style={{ paddingTop: '120px' }}>
             <div style={{ display: 'flex', gap: '30px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
-                <motion.div
-                    initial={{ x: 50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                <div
                     style={{ flex: 1, minWidth: '280px', display: 'flex', flexDirection: 'column', gap: '30px', alignItems: 'center' }}
                 >
                     <Image
@@ -31,7 +29,7 @@ export default function PassportContent() {
                         sizes="(max-width: 768px) 80vw, 400px"
                         style={{ width: '80%', height: 'auto', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }}
                     />
-                </motion.div>
+                </div>
 
                 <motion.div
                     initial={{ x: -50, opacity: 0 }}
@@ -59,7 +57,9 @@ export default function PassportContent() {
                     </div>
                 </motion.div>
             </div>
-            <VideoSection videoId="dQw4w9WgXcQ" />
+            <VideoSection videoId="Xr99kMDlc40"
+                description="Watch how easy it is to capture your memories. Just touch, pose, and snap! Our intuitive interface guides you through every step, ensuring you get the perfect shot every time."
+            />
         </div>
     );
 }
