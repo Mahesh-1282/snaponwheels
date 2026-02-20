@@ -7,18 +7,29 @@ const inter = Inter({ subsets: ["latin"] });
 
 // Ee Metadata Google ki chala mukhyam
 export const metadata = {
-  metadataBase: new URL('https://snaponwheels.in'), // Nee domain ikkada pettu
+  metadataBase: new URL('https://snaponwheels.in'),
   title: {
     default: "SnapOnWheels | #1 AI Photo Booth in Hyderabad",
     template: "%s | SnapOnWheels"
   },
   description: "Elevate your events with SnapOnWheels AI-driven photo booths. Perfect for Weddings, Corporate Events, and College Fests. Book Selfie, Magic, & Vibe modes today!",
-  keywords: ["Photo booth Hyderabad", "Wedding Photo Booth", "AI Photo Booth", "Event Photography", "SnapOnWheels", "Magic Mirror Photo Booth", "Selfie Booth"],
+  keywords: ["Photo booth Hyderabad", "Wedding Photo Booth", "AI Photo Booth", "Event Photography", "SnapOnWheels", "Magic Mirror Photo Booth", "Selfie Booth", "instasnap", "fotozine", "photobooth", "photo studio", "photo booth rental", "photo booth for rent"],
+  icons: {
+    icon: [
+      { url: '/images/camera-icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/camera-icon.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/images/camera-icon.png',
+  },
   openGraph: {
     title: "SnapOnWheels - The Ultimate Photo Booth Experience",
     description: "Make your event unforgettable with our AI Photo Booths.",
     url: 'https://snaponwheels.in',
     siteName: 'SnapOnWheels',
+    images: [{ url: '/images/camera-icon.png', width: 512, height: 512 }],
     locale: 'en_IN',
     type: 'website',
   },
@@ -62,38 +73,4 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
-} 
-
-
-
-
-
-
-
-
-
-// import { Inter } from "next/font/google";
-// import "./globals.css";
-// import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
-
-// const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata = {
-//   title: "SnapOnWheels | Premium Photo Booth Services",
-//   description: "Experience the magic of SnapOnWheels. Selfie Mode, Magic Snap, Vibe Mode, and Passport Mode for your events.",
-// };
-
-// export default function RootLayout({ children }) {
-//   return (
-//     <html lang="en">
-//       <body className={inter.className}>
-//         <Navbar />
-//         <main style={{ minHeight: '100vh', paddingTop: '80px' }}>
-//           {children}
-//         </main>
-//         <Footer />
-//       </body>
-//     </html>
-//   );
-// }
+}
